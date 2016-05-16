@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'book_sorter'
+
+ARGV.each_with_index do |arg, i|
+  puts "Sorting #{arg}"
+  BookSorter::Client.new(arg)
+
+  Time.sleep(15) unless i == ARGV.length - 1
+end
